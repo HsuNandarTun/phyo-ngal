@@ -120,7 +120,7 @@ footer{text-align:center;padding:3rem 1rem 4rem;font-family:var(--script);font-s
   <nav class="pager" id="pager" aria-label="Song pages"></nav>
 </section>
 
-<footer>Made with love ♥</footer>
+<footer>Made with 心 ♥</footer>
 </main>
 
 <script>
@@ -151,16 +151,23 @@ const COUNT_FROM = DATES[2].date;           // counter starts from the first dat
 const SONGS = [
   ["ညှို့မျက်ဝန်း - ဘိုဘို", "https://youtu.be/r2KlN0QPjBA?si=jI5IN8RBmGmARyaj"],
   ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["ခွဲခွါခြင်းများ - စိုးလွင်လွင်", "https://youtu.be/v6DSvoS5xlw?si=Cv_l-l-vRX8ibF_8"],
-  ["Paper Rings - Taylor Swift", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["စကားလုံးတွေမလိုဘူး - ထူးအိမ်သင်", "https://youtu.be/IfwmHmdCUhw?si=6rikIwTJU3zCjvdL"],
+  ["ပိုင်စိုးမှုဧကရီ - စိုးလွင်လွင်", "https://youtu.be/QBt7YCwMJm0?si=CUC048yvK6cJFoNS"],
+  ["Paper Rings - Taylor Swift", "https://youtu.be/8zdg-pDF10g?si=8JAMA-wlmIkuAB43"],
   ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
-  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
-  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["စကားလုံးတွေမလိုဘူး - ထူးအိမ်သင်", "https://youtu.be/IfwmHmdCUhw?si=6rikIwTJU3zCjvdL"],
+  ["ခွဲခွါခြင်းများ - စိုးလွင်လွင်", "https://youtu.be/v6DSvoS5xlw?si=Cv_l-l-vRX8ibF_8"],
+  ["ခွန်းအားမျှပါ - စိုးလွင်လွင်", "https://youtu.be/wxx9QvexLXw?si=kNBX17CHzEIrNkPF"],
+  ["မကြင်နာသူသို့ - စိုးလွင်လွင်", "https://youtu.be/Q6HxK8syFJw?si=xrtuNDd-2kUkwtJV"],
+  ["မချစ်ဘူးမပြောပါနဲ့ - ဒိုးလုံး", "https://youtu.be/ILL4xMkkVtk?si=aiB18BEqZAy6mlgb"],
+  ["ငယ်သူမို့ - စိုးလွင်လွင်", "https://youtu.be/xUmLOQ0orQg?si=yd59oEGkY_qwVq4a"],
+  ["အခါလွန်တဲ့မိုး - ထူးအိမ်သင်", "https://youtu.be/R7QQivxBQ_I?si=emAYcrJosUwIXyHV"],
+  ["ချစ်ဦးမေ - ဒိုးလုံး", "https://youtu.be/6QVRmM39wtY?si=k445xdxeUuILd9r_"],
+  ["စိတ်ဖြေသီချင်း - စိုးလွင်လွင်", "https://youtu.be/rPQ5g9hoY5U?si=Rxqcl_IB2byVglSR"],
+  ["ဖြေလွှတ်ပစ်လိုက်တဲ့ကြိုး - စိုးလွင်လွင်", "https://youtu.be/Y3x9laUo32g?si=i6YEFTIWPup82UFv"],
+  ["၀မ်းနည်းတတ်တဲ့ချစ်သူ - ရေမွန်", "https://youtu.be/83MMWlIDlKg?si=lPvLiy3L3yY0ANtZ"],
+  ["စာ - စိုးလွင်လွင်", "https://youtu.be/oQqVrG1Fb2o?si=UYGIX4PKvgR1TgZ3"],
+  ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
+  ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
   ["A Thousand Years - Christina Perri", "https://www.youtube.com/watch?v=rtOvBOTyX00"]
   // ... paste the rest of your songs here, one line each
 ];
@@ -220,7 +227,7 @@ function tick() {
 tick();
 
 // songs: table with 10 songs per page
-const PER_PAGE = 10;
+const PER_PAGE = 5;
 const rows = document.getElementById('songs'), pager = document.getElementById('pager'), count = document.getElementById('count');
 let items = [], page = 1;
 function render() {
