@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Memories</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%225%22 fill=%22%233f6fb5%22/><path d=%22M12 20s-6.800-4.200-8.700-8.500C2 8.400 3.900 5.200 7.100 5.200c1.900 0 3.400 1 4.900 2.700 1.500-1.700 3-2.700 4.900-2.700 3.200 0 5.100 3.200 3.800 6.300C18.800 15.800 12 20 12 20z%22 fill=%22white%22/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#1f3556; --wine:#3f6fb5; --rose:#8fb3e0; --blush:#eaf3ff; --gold:#a9c7ee; --paper:#ffffff;
+  --serif:'Cormorant Garamond',Georgia,serif; --script:'Dancing Script','Segoe Script',cursive;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);font-size:1.2rem;line-height:1.7;color:var(--plum);
+  background:linear-gradient(180deg,#ffffff 0%,#eef5ff 35%,#d9e8fb 70%,#c3dbf7 100%);background-attachment:fixed;min-height:100vh}
+section{max-width:860px;margin:0 auto;padding:4.5rem 1.4rem}
+h2{font-family:var(--script);font-size:2.6rem;color:var(--wine);text-align:center;margin-bottom:2rem;font-weight:700}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.hearts span{position:absolute;bottom:-40px;color:var(--rose);opacity:.6;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1}
+
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+/* .hero .big{filter:drop-shadow(0 6px 14px rgba(63,111,181,.45));line-height:1;animation:beat 1.6s ease-in-out infinite} */
+.hero .big{font-size:5.5rem;line-height:1;color:var(--rose);animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.15)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+.hero h1{font-family:var(--script);font-size:clamp(2.8rem,10vw,5.2rem);color:var(--wine);margin:1rem 0 .3rem;line-height:1.1}
+.hero .counter{margin:1.2rem 0 1.4rem}
+.hero .counter div{background:#fff;min-width:96px;box-shadow:0 8px 22px rgba(63,111,181,.2)}
+.hero p{color:var(--plum);font-style:italic;font-size:1.4rem;max-width:30ch}
+.bday{font-family:var(--script);font-size:2rem;color:var(--wine);margin-bottom:.4rem}
+.together{margin-top:1rem;font-style:italic}
+.counter{margin-top:.5rem;display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.counter div{color:var(--plum);background:var(--blush);border:1px solid var(--gold);border-radius:60px 60px 14px 14px;padding:.7rem 1.1rem;min-width:84px}
+.counter b{display:block;font-size:2rem;color:var(--wine);font-weight:600}
+.counter small{font-size:.95rem}
+
+/* small simple counter */
+.counter.mini{justify-content:flex-start;gap:.5rem;margin-top:.8rem}
+.counter.mini div{min-width:0;padding:.2rem .7rem;border-radius:8px;border:1px solid var(--gold);background:transparent;box-shadow:none}
+.counter.mini b{display:inline;font-size:1.15rem;margin-right:.3rem}
+.counter.mini small{display:inline;font-size:1rem}
+
+/* dates timeline */
+.timeline{position:relative;padding-left:2.2rem;border-left:2px dashed var(--gold);margin-left:.8rem}
+.moment{color:var(--plum);position:relative;margin-bottom:2rem;background:var(--paper);border-radius:18px;padding:1.2rem 1.5rem;box-shadow:0 8px 24px rgba(63,111,181,.18)}
+.moment::before{content:"♥";position:absolute;left:-3.05rem;top:1rem;background:var(--wine);color:#fff;width:1.7rem;height:1.7rem;border-radius:50%;display:grid;place-items:center;font-size:.95rem}
+.moment.bd::before{content:"🎂";background:var(--blush);font-size:1rem}
+.moment .date{font-family:var(--script);font-size:1.7rem;color:var(--wine)}
+.moment h3{font-size:1.4rem;font-weight:600}
+
+/* letters */
+.letter{color:var(--plum);background-color:var(--paper);padding:1.8rem 1.8rem 1.4rem;border-radius:6px;box-shadow:0 14px 40px rgba(63,111,181,.22);
+  background-image:repeating-linear-gradient(transparent 0 2.2rem,rgba(143,179,224,.3) 2.2rem 2.25rem);
+  font-family:var(--script);font-size:1.5rem;line-height:2.25rem;border-top:6px solid var(--gold);margin-bottom:2rem}
+.letter .ldate{font-size:1.15rem;color:var(--wine);font-family:var(--serif);font-style:italic;line-height:1.6;margin-bottom:.4rem}
+.letter .ltitle{font-size:1.9rem;color:var(--wine);line-height:2.6rem;font-weight:700}
+.letter .lbody{white-space:pre-line;overflow:hidden}
+.letter.closed .lbody{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.letter .more{margin-top:.6rem;background:var(--wine);color:#fff;border:0;border-radius:30px;padding:.4rem 1.3rem;font:inherit;font-size:1.15rem;cursor:pointer}
+.letter .more:hover,.letter .more:focus-visible{background:var(--plum);outline:none}
+.letter .sign{text-align:right;color:var(--wine);font-size:1.8rem}
+.letter.closed .sign{display:none}
+@media (max-width:520px){.letter{font-size:1.35rem;padding:1.5rem 1.1rem}}
+
+/* music */
+.search{width:100%;padding:.9rem 1.3rem;border-radius:40px;border:2px solid var(--gold);background:var(--paper);font:inherit;color:var(--plum);margin-bottom:1rem}
+.search:focus{outline:3px solid var(--gold)}
+.count{color:var(--rose);text-align:center;font-style:italic;margin-bottom:1rem}
+.tablewrap{overflow-x:auto;border-radius:18px;background:var(--paper);box-shadow:0 8px 24px rgba(63,111,181,.18);border-top:6px solid var(--gold)}
+table.songs{width:100%;border-collapse:collapse}
+.songs th{background:var(--blush);color:var(--wine);font-family:var(--script);font-size:1.5rem;font-weight:700;padding:.6rem 1.1rem;text-align:left}
+.songs td{padding:.65rem 1.1rem;border-bottom:1px solid #e3ecf8}
+.songs tr:last-child td{border-bottom:0}
+.songs tbody tr:hover{background:var(--blush)}
+.songs .n{color:var(--rose);width:4rem}
+.songs .p{width:5rem;text-align:center}
+.songs th:last-child{text-align:center}
+.songs .p a{display:inline-grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--wine);color:#fff;text-decoration:none;font-size:.9rem}
+.songs .p a:hover,.songs .p a:focus-visible{background:var(--plum);outline:3px solid var(--gold)}
+.pager{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:1.2rem}
+.pager button{min-width:2.5rem;height:2.5rem;padding:0 .9rem;border-radius:20px;border:1px solid var(--gold);background:var(--paper);color:var(--wine);font:inherit;font-size:1.05rem;cursor:pointer}
+.pager button:hover:not(:disabled),.pager button:focus-visible{background:var(--blush);outline:none}
+.pager button.on{background:var(--wine);color:#fff;border-color:var(--wine)}
+.pager button:disabled{opacity:.4;cursor:default}
+footer{text-align:center;padding:3rem 1rem 4rem;font-family:var(--script);font-size:1.6rem;color:var(--wine)}
+@media (prefers-reduced-motion:reduce){.hearts span,.hero .big{animation:none}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+<main>
+
+<section class="hero">
+  <div class="big">♥</div>
+  <!-- <svg class="big" viewBox="0 0 24 24" width="92" height="92" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.8 1.1 5.4 3 1.6-1.9 3.3-3 5.4-3 3.6 0 5.7 3.700 4.200 7.200C19.500 16.400 12 21 12 21z" fill="#fff" stroke="#8fb3e0" stroke-width="1"/></svg> -->
+  <h1>Happy Birthday,<br><span id="herName">my love</span></h1>
+  <div class="counter" id="bday" aria-label="Her birthday"></div>
+  <p>With all my heart, this page is for you.</p>
+</section>
+
+<section id="dates">
+  <h2>Our Special Days</h2>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section id="letter">
+  <h2>Letters For You</h2>
+  <div id="letters"></div>
+</section>
+
+<section id="music">
+  <h2>Songs We Share</h2>
+  <input class="search" id="search" type="search" placeholder="Search our songs…" aria-label="Search songs">
+  <p class="count" id="count"></p>
+  <div class="tablewrap"><table class="songs"><thead><tr><th>No.</th><th>Song</th><th>Play</th></tr></thead><tbody id="songs"></tbody></table></div>
+  <nav class="pager" id="pager" aria-label="Song pages"></nav>
+</section>
+
+<footer>Made with love ♥</footer>
+</main>
+
+<script>
+/* ============ EDIT THIS PART ============ */
+const BIRTHDAY = "2026-12-06";              // her birthday, YYYY-MM-DD
+const HER_NAME = "Baby";                 // her name or nickname
+const DATES = [
+  { date: "2022-11-15", title: "The day we first met",  note: "The moment everything changed." },
+  { date: "2025-12-26", title: "Our first date",        note: "I was nervous, and you were perfect." },
+  { date: "2025-03-03", title: "Our anniversary",       note: "The day we became us." }
+];
+
+// Add letters here. The FIRST letter is shown; the others appear after clicking Show more.
+// Use \n for a new line. "date" format: YYYY-MM-DD
+const LETTERS = [
+  { date: "2026-12-06", title: "Happy Birthday ကလေး",
+    text: "My dearest love,\n\nWrite your first letter here. Tell her how this month felt and what you love about her.\n\nEvery day with you feels warm and bright.",
+    sign: "Forever yours, Your name" }
+  //   ,
+  // { date: "2023-05-20", title: "Our 2 months anniversary",
+  //   text: "My love,\n\nWrite your second letter here.\n\nThank you for being you.",
+  //   sign: "Always yours, Your name" }
+  // ... add one block for each month
+];
+const COUNT_FROM = DATES[2].date;           // counter starts from the first date above (the anni)
+
+// Add songs here: ["Title - Artist", "https://www.youtube.com/watch?v=XXXX"]
+const SONGS = [
+  ["ညှို့မျက်ဝန်း - ဘိုဘို", "https://youtu.be/r2KlN0QPjBA?si=jI5IN8RBmGmARyaj"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["ခွဲခွါခြင်းများ - စိုးလွင်လွင်", "https://youtu.be/v6DSvoS5xlw?si=Cv_l-l-vRX8ibF_8"],
+  ["Paper Rings - Taylor Swift", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["စကားလုံးတွေမလိုဘူး - ထူးအိမ်သင်", "https://youtu.be/IfwmHmdCUhw?si=6rikIwTJU3zCjvdL"],
+  ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
+  ["A Thousand Years - Christina Perri", "https://www.youtube.com/watch?v=rtOvBOTyX00"]
+  // ... paste the rest of your songs here, one line each
+];
+/* ========================================= */
+
+document.getElementById('herName').textContent = HER_NAME;
+
+// floating hearts
+const hb = document.getElementById('hearts');
+for (let i = 0; i < 16; i++) {
+  const s = document.createElement('span');
+  s.textContent = ['🎈','♥','🎂','✦','🎁','♡','🎉','♡'][i % 8];
+  s.style.left = Math.random() * 100 + '%';
+  s.style.fontSize = (14 + Math.random() * 22) + 'px';
+  s.style.animationDuration = (12 + Math.random() * 14) + 's';
+  s.style.animationDelay = (-Math.random() * 20) + 's';
+  hb.appendChild(s);
+}
+
+// timeline
+const fmt = d => new Date(d + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+document.getElementById('timeline').innerHTML = DATES.map(m =>
+  `<div class="moment"><div class="date">${fmt(m.date)}</div><h3>${m.title}</h3><p>${m.note}</p></div>`).join('') +
+  `<div class="moment"><div class="date">${fmt(COUNT_FROM)}</div><h3>Our time together</h3><div class="counter mini" id="counter"></div></div>`;
+{ const d = new Date(BIRTHDAY + 'T00:00:00');
+  document.getElementById('bday').innerHTML = [[d.getDate(),'day'],[d.toLocaleDateString('en-GB',{month:'long'}),'month'],[d.getFullYear(),'year']]
+    .map(x => `<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join(''); }
+
+
+
+// letters: one letter is shown, the others appear after "Show more letters"
+const lbox = document.getElementById('letters');
+const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const card = l => `<article class="letter"><div class="ldate">${fmt(l.date)}</div><div class="ltitle">${esc(l.title)}</div>
+  <div class="lbody">${esc(l.text)}</div><p class="sign">${esc(l.sign || '')}</p></article>`;
+lbox.innerHTML = card(LETTERS[0]) + (LETTERS.length > 1
+  ? `<div id="moreLetters" hidden>${LETTERS.slice(1).map(card).join('')}</div>
+     <div style="text-align:center"><button class="more" id="moreBtn" aria-expanded="false">Show more letters (${LETTERS.length - 1})</button></div>` : '');
+const mb = document.getElementById('moreBtn');
+if (mb) mb.addEventListener('click', () => {
+  const box = document.getElementById('moreLetters');
+  box.hidden = !box.hidden;
+  mb.textContent = box.hidden ? `Show more letters (${LETTERS.length - 1})` : 'Show less';
+  mb.setAttribute('aria-expanded', !box.hidden);
+});
+
+// counter
+function tick() {
+  const a = new Date(COUNT_FROM + 'T00:00:00'), b = new Date();
+  let y = b.getFullYear() - a.getFullYear(), m = b.getMonth() - a.getMonth(), d = b.getDate() - a.getDate();
+  if (d < 0) { m--; d += new Date(b.getFullYear(), b.getMonth(), 0).getDate(); }
+  if (m < 0) { y--; m += 12; }
+  const days = Math.floor((b - a) / 864e5);
+  document.getElementById('counter').innerHTML =
+    [[y,'years'],[m,'months'],[d,'days'],[days,'days in total']].map(x => `<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('');
+}
+tick();
+
+// songs: table with 10 songs per page
+const PER_PAGE = 10;
+const rows = document.getElementById('songs'), pager = document.getElementById('pager'), count = document.getElementById('count');
+let items = [], page = 1;
+function render() {
+  const pages = Math.max(1, Math.ceil(items.length / PER_PAGE));
+  page = Math.min(page, pages);
+  rows.innerHTML = items.slice((page - 1) * PER_PAGE, page * PER_PAGE).map(s =>
+    `<tr><td class="n">${s[0]}</td><td>${s[1].replace(/&/g,'&amp;').replace(/</g,'&lt;')}</td><td class="p"><a href="${s[2]}" target="_blank" rel="noopener" aria-label="Play ${s[0]}">▶</a></td></tr>`).join('')
+    || '<tr><td colspan="3">No songs found.</td></tr>';
+  const from = Math.max(1, Math.min(page - 2, pages - 4)), to = Math.min(pages, from + 4);
+  let h = `<button data-p="${page - 1}" ${page === 1 ? 'disabled' : ''}>Prev</button>`;
+  if (from > 1) h += `<button data-p="1">1</button>` + (from > 2 ? '<span>…</span>' : '');
+  for (let i = from; i <= to; i++) h += `<button data-p="${i}" class="${i === page ? 'on' : ''}">${i}</button>`;
+  if (to < pages) h += (to < pages - 1 ? '<span>…</span>' : '') + `<button data-p="${pages}">${pages}</button>`;
+  h += `<button data-p="${page + 1}" ${page === pages ? 'disabled' : ''}>Next</button>`;
+  pager.innerHTML = h;
+}
+function show(q) {
+  items = SONGS.map((s, i) => [i + 1, s[0], s[1]]).filter(s => s[1].toLowerCase().includes(q.toLowerCase()));
+  count.textContent = items.length + ' songs' + (q ? ' found' : ' that remind us of each other');
+  page = 1; render();
+}
+pager.addEventListener('click', e => {
+  const b = e.target.closest('button[data-p]'); if (!b || b.disabled) return;
+  page = +b.dataset.p; render();
+  document.getElementById('music').scrollIntoView({ behavior: 'smooth' });
+});
+document.getElementById('search').addEventListener('input', e => show(e.target.value));
+show('');
+</script>
+</body>
+</html>
