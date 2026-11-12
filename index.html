@@ -128,7 +128,7 @@ footer{text-align:center;padding:3rem 1rem 4rem;font-family:var(--script);font-s
 const BIRTHDAY = "2026-12-06";              // her birthday, YYYY-MM-DD
 const HER_NAME = "Baby";                 // her name or nickname
 const DATES = [
-  { date: "2022-11-15", title: "The day we first met",  note: "The moment everything changed." },
+  { date: "2022-10-27", title: "The day we first met",  note: "The moment everything changed." },
   { date: "2025-12-26", title: "Our first date",        note: "I was nervous, and you were perfect." },
   { date: "2025-03-03", title: "Our anniversary",       note: "The day we became us." }
 ];
@@ -153,7 +153,7 @@ const SONGS = [
   ["Lucky Ones - Lana Del Rey", "https://youtu.be/c3JHH6Hc_io?si=yACYZ_hzG4VVRjdT"],
   ["ပိုင်စိုးမှုဧကရီ - စိုးလွင်လွင်", "https://youtu.be/QBt7YCwMJm0?si=CUC048yvK6cJFoNS"],
   ["Paper Rings - Taylor Swift", "https://youtu.be/8zdg-pDF10g?si=8JAMA-wlmIkuAB43"],
-  ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
+  ["I Left My Heart - Lucy Blue", "https://youtu.be/ZS1uIENR5AY?si=iCAnOYNeQJ4BszjG"],
   ["စကားလုံးတွေမလိုဘူး - ထူးအိမ်သင်", "https://youtu.be/IfwmHmdCUhw?si=6rikIwTJU3zCjvdL"],
   ["ခွဲခွါခြင်းများ - စိုးလွင်လွင်", "https://youtu.be/v6DSvoS5xlw?si=Cv_l-l-vRX8ibF_8"],
   ["ခွန်းအားမျှပါ - စိုးလွင်လွင်", "https://youtu.be/wxx9QvexLXw?si=kNBX17CHzEIrNkPF"],
@@ -166,9 +166,79 @@ const SONGS = [
   ["ဖြေလွှတ်ပစ်လိုက်တဲ့ကြိုး - စိုးလွင်လွင်", "https://youtu.be/Y3x9laUo32g?si=i6YEFTIWPup82UFv"],
   ["၀မ်းနည်းတတ်တဲ့ချစ်သူ - ရေမွန်", "https://youtu.be/83MMWlIDlKg?si=lPvLiy3L3yY0ANtZ"],
   ["စာ - စိုးလွင်လွင်", "https://youtu.be/oQqVrG1Fb2o?si=UYGIX4PKvgR1TgZ3"],
-  ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
-  ["I Left My Heart - Lucy Blue", "https://youtu.be/8zdg-pDF10g?si=Zk16Q9fe7y3dSbfp"],
-  ["A Thousand Years - Christina Perri", "https://www.youtube.com/watch?v=rtOvBOTyX00"]
+  ["စာနာတတ်သူမို့ - စိုးလွင်လွင်", "https://youtu.be/fABju5_vkfs?si=a5LChfODAlhpdueL"],
+  ["အကြင်နာနည်းလှလွန်းသူ - ဒိုးလုံး", "https://youtu.be/hdJHSu-Yt9w?si=js8gwuLA6ZNOeNXv"],
+  ["အရိုးထိအောင်ရူး - ဒိုးလုံး", "https://youtu.be/EhyW85SFG3U?si=agZ0Syph8Vv4dif9"],
+  ["အရမ်းလွမ်းနေပြီ - ဘိုဘို", "https://youtu.be/oKZ64KipLY4?si=3vv4ah6oJG5KYrEL"],
+  ["တမ်းတ - ဝိုင်ဝိုင်း", "https://youtu.be/6FX3zjs-VxU?si=sc5G_4FUVGpei0GO"],
+  ["ရင်ခုန်နေတုန်းပဲ - လှိုင်ဦးမော်", "https://youtu.be/DDUS3gvV8zU?si=_Jfq7SYXA5Fv_Asr"],
+  ["အိပ်ရေးပျက် - မာရဇ္ဇ", "https://youtu.be/JK6QsUNwQ7Q?si=NqyvOdg_F43Y_baw"],
+  ["မုန်းမေ့ဖို့မလွယ် - ဘိုဘို", "https://youtu.be/Uln1NF5nA84?si=0o1iPQwgqdkK9xfJ"],
+  ["ဆွဲအား - မာရဇ္ဇ", "https://youtu.be/0jNm2La-9uM?si=CRL2GsrntD6gWRWY"],
+  ["သိပ်ချစ်တာပဲ - ဗဒင်", "https://youtu.be/y-J5_c1yX0E?si=g740fjtFo2uG2_S4"],
+  ["ယုံပါ - မောင်မောင်ဇော်လတ်", "https://youtu.be/wayKEyakqHM?si=xXQweakxkMXtW0Z7"],
+  ["မှော်ရုံလမ်း - စိုးပိုင်", "https://youtu.be/XKCV5VI4ap0?si=zn90uypiZ5OS5Wga"],
+  ["ကြယ်ပြာလေးနဲ့ဝေးတဲ့နောက် - ကိုအောင်", "https://youtu.be/9A3sQLeSZLo?si=Czb-djHpj-OsMHv4"],
+  ["The More You Give - Michael Bublé", "https://youtu.be/F1njMd3qjq0?si=tOGBTYx-b8ybMRE2"],
+  ["တစ်ပင်တည်းရင်ထဲကနွယ် - Rဇာနည်", "https://youtu.be/Z4KsCecoEhc?si=cEO71H3wmM7j-aZQ"],
+  ["ခတ္တာ - ခိုင်ထူး", "https://youtu.be/vaaiylO4Plk?si=F42NmKWftg69648F"],
+  ["ရေစီးကြောင်းသံယောဇဉ် - ထူးအိမ်သင်၊ မင်းခေါင်", "https://youtu.be/-7umfJePaW4?si=aL3FDR8S3MzCmrdc"],
+  ["ဝေးဝေးကလွမ်း - မာရဇ္ဇ", "https://youtu.be/KqUtDCVdZDY?si=jnYmLMVlZT7plmdb"],
+  ["ကြိုနေစေချင်တယ် - ဂျီလတ်", "https://youtu.be/VrCYrOAIwBU?si=13bbeam5KruoTzCy"],
+  ["အချစ်အယူခံ - ခင်မောင်ထူး", "https://youtu.be/Jfubbg3LbgM?si=4WHOMI2n8GbWpx_U"],
+  ["အခုတော့ပါးစပ်ရာဇဝင်တစ်ခုဖြစ်ခဲ့ပြီ - လွှမ်းမိုး", "https://youtu.be/YuN3_JcOTDM?si=8L2ncw_wTCze4tMK"],
+  ["သုံ့ပန်း - ရေမွန်", "https://youtu.be/ssy_bibXaTo?si=8dZhEiedACNghqWQ"],
+  ["မျက်လုံးချင်း စကားပြောနေပြီ - Lလွန်းဝါ", "https://youtu.be/-X1Kk3Npq3g?si=jfXHnLvJHlIkq_hz"],
+  ["ဒီကချစ်လိုက်ရတာ - ဘိုဘိုဟန်", "https://youtu.be/RpNQwS5npQ4?si=u-ZXwwn5689nuOBn"],
+  ["ရွှေလည်တိုင် - ခိုင်ထူး", "https://youtu.be/GiOyjqu4L-o?si=vL0N2kthK33fBtUh"],
+  ["ကဗျာမျက်နှာ - စိုးလွင်လွင်", "https://youtu.be/WFfmRoZdqCM?si=LMrIm8XiX6vSh1Is"],
+  ["ရင်ချင်းဆက်ချည်တဲ့ကြိုး - ဖိုးကာ", "https://youtu.be/9ZEgU-pMhno?si=6TW8N1Aewq0tvcZ1"],
+  ["နေနိုင်သူလေး - စိုးလွင်လွင်", "https://youtu.be/Nk0VUd9ntTI?si=sfK16QvFpIkaU4_0"],
+  ["ကဗျာမမီ စာမပီ - စံလင်း", "https://youtu.be/MhNqzCpWY7s?si=DEnukdS2FkBmcI1I"],
+  ["စိုးစိတ်တိုးတိတ်လွမ်းချိန် - စိုးလွင်လွင်", "https://youtu.be/j4uyZvV4l44?si=JoAqhjQcYRhGtKpC"],
+  ["ဝေးပြီးတဲ့နောက် - ဂျီလတ်", "https://youtu.be/4IuWP3g5Fdw?si=VoK6KzRP-oQRMIHQ"],
+  ["မောင့်မျက်ရည်ဝိုင်း - စိုးလွင်လွင်", "https://youtu.be/4ypxcja1Z6c?si=LnnG7aUCwXLztz8y"],
+  ["ဒီဆောင်းတစ်ည - စိုင်းထီးဆိုင်", "https://youtu.be/7q5KgaLtShU?si=2be3Yj8DXnY7_zBs"],
+  ["မင်းအကြောင်းအိပ်မက် - စည်သူလွင် / Lလွန်းဝါ", "https://youtu.be/EieQHYbJUNA?si=bkTVJ1Aa0-zxueEa"],
+  ["မေ့မှာပါ - ဝိုင်ဝိုင်း", "https://youtu.be/4hUOGJfixVw?si=0JxpuhX87qHDbAS9"],
+  ["ဝေးလွင့်ခြင်းရဲ့နောက်ဆုံးခြေရာ - စိုးလွင်လွင်", "https://youtu.be/uxq7GBNL-24?si=jJ5YlTO2-UKox-CR"],
+  ["ကောင်းကင်ထဲကမြစ်တစ်စင်း - ထူးအိမ်သင်", "https://youtu.be/5jB0FKSTwh0?si=rJDh31LO_rgrOM3b"],
+  ["ချစ်တိုင်းလည်းမညား - ထူးအိမ်သင်", "https://youtu.be/6-FFrDTGnpA?si=1AM2D2bmAw60Jhh3"],
+  ["ချစ်သူရင်ခွင် - ဖိုးချို", "https://youtu.be/a19BQR-Pvao?si=4wYQIWlsf5iiIkEV"],
+  ["သက်ထား - စံလင်း", "https://youtu.be/OGrhpe8fczc?si=mlI2rCnRNXQmRCCM"],
+  ["မျှော်လင့်ခြင်းလမင်း - မာရဇ္ဇ", "https://youtu.be/4SiCyMykpS4?si=inW7TuJOVrGoj-HA"],
+  ["သီချင်းချစ်သူ - အဲလက်စ်", "https://youtu.be/9gkCEu3cRb4?si=JPZoyi8_hk4p5yLM"],
+  ["တိုးတိုးလေးပြောပါ - ဖိုးကာ", "https://youtu.be/zT-UJoOMerE?si=Z0v9sb958MXwhOwr"],
+  ["ယဉ်ယဉ်လေးရူး - R ဇာနည်", "https://youtu.be/W40rdzUVdvs?si=Dm4wCvp0XBNx8i9i"],
+  ["နှောင်ကြိုးလေးတစ်မျှင် - ဘိုဘို", "https://youtu.be/3hfhyPMxJVM?si=_wTg_2lG0RYOEvPC"],
+  ["ချစ်သူများရဲ့မနက်ဖြန် - ဘိုဘို", "https://youtu.be/aKDoPBid8Eo?si=N0tYWUv6n5T9Oz9c"],
+  ["ဆူးများတဲ့ပန်း - ဖိုးချို", "https://youtu.be/sFxCTG-dll8?si=Az092GY92x36aLja"],
+  ["ငါ့ရဲ့လျှို့ဝှက်ချက် - ဖိုးကာ", "https://youtu.be/iBJ-R5M72WE?si=xo5elB5jid14j0AD"],
+  ["မရိုးတော့ဘူး - ထူးအိမ်သင်", "https://youtu.be/GOq2OtzTmmc?si=0w8iEO2qjy4bTvC5"],
+  ["အချစ်ဆိုတာ - ကိုအောင်", "https://youtu.be/5IA0BUNzT1k?si=nbUBsiEFu60_2EAQ"],
+  ["နွေဦးပုံပြင် - ကိုအောင်", "https://youtu.be/RagJcPc74bE?si=S-gJCJ07Z4k7u8JW"],
+  ["How Deep Is Your Love - Bee Gees", "https://youtu.be/XpqqjU7u5Yc?si=Se89inh8LPlYIOSa"],
+  ["Payphone - Maroon 5", "https://youtu.be/KRaWnd3LJfs?si=K5raV9oCppvBmvY1"],
+  ["အမှတ်တရလေးများ - ဘိုဘို", "https://youtu.be/sf6p2X-cyj4?si=AM8Rzqonjy29MBQ7"],
+  ["လွမ်းဆွတ်ခြင်းဒဏ်ရာ - ဘိုဘို", "https://youtu.be/ait8uyAJXns?si=zVHbaCFP2erVu4bT"],
+  ["မသိလမ်း - ဘိုဘို", "https://youtu.be/uJc_xSC0et8?si=YPCj2QK6f-XNco8d"],
+  ["တို့ဝေးရာ - ဘိုဘို", "https://youtu.be/A6sF3OhOzHI?si=sBOdPy_MXkfJJNs2"],
+  ["ဟင်္သာတို့ရဲ့နန်းတော်ရှေ့ - မာရဇ္ဇ", "https://youtu.be/bTidbz3VP8o?si=EgzHO8Q6mRHWBKrS"],
+  ["ဖြည်းဖြည်းလေးနဲ့ငြိမ့်ငြိမ့်လေး - ထူးအိမ်သင်", "https://youtu.be/S55qlyocigk?si=9bJ_9HIcqGqxJ5GE"],
+  ["နေရဲ့နေ့ လရဲ့ ည - စံလင်း", "https://youtu.be/hkgDSesS5vE?si=Mj_yrvJxVBuOBO24"],
+  ["မဆုံဆည်းခဲ့လေသော - စံလင်း", "https://youtu.be/TKFEu11uHE4?si=ThFv7RnDIE1dHgnw"],
+  ["ချစ်ခြင်းရဲ့အခြားတစ်ဘက် - စံလင်း", "https://youtu.be/jveolJwASY8?si=70IoVe4YHyfNCtHq"],
+  ["နွယ် - စံလင်း", "https://youtu.be/kADCt8hiACU?si=FaiPrH9P9vpF2svn"],
+  ["အဖြူသက်သက် - Lလွန်းဝါ", "https://youtu.be/n8sx5TbRxKg?si=hjep9dgznENQi6f3"],
+  ["I'm Yours - Jason Mraz", "https://youtu.be/EkHTsc9PU2A?si=Bwv2-t3A0cyIBLbm"],
+  ["ဝေဒနာလူ - ရင်ဂို", "https://youtu.be/oIskhRa0psc?si=8rAvIqMl0e0NdpxY"],
+  ["အနာဂတ်မဲ့ - ဆောင်းဦးလှိုင်၊ စည်သူလွင်", "https://youtu.be/RYyQKOhOpLM?si=w5eil3i48yAQyndf"],
+  ["မင်းမသိအောင်ချစ်မယ် - ဂျီလတ်", "https://youtu.be/2tCWh0nWTgk?si=MySrizErF8pjzf48"],
+  ["ကြယ်တွေစုံတဲ့ည - ထူးအိမ်သင်", "https://youtu.be/3_GcxlBASAg?si=gfcuv8tYNJKo71lq"],
+  ["ကြေကွဲနေ့ညတွေ - ဆောင်းဦးလှိုင်၊ စည်သူလွင်၊ အဲလက်စ်", "https://youtu.be/2EOZDVjh4PY?si=jHamF3V2ilukqiZo"],
+  ["လွမ်းရတဲ့ညတွေလွန်ပါစေ - စိုးလွင်လွင်", "https://youtu.be/PyEhzAty6ko?si=zZfRX1k8OVsHSWjx"],
+  ["ဝေးများဝေးရင် - ဂျက်မြသောင်း", "https://youtu.be/ZM4adc5MtvA?si=5BGFbzni80OlkMjp"],
+  ["ခေါင်းနဲ့ပန်း - ဟန်ထွန်း", "https://youtu.be/79K71jkqjps?si=NGLW_fLPf-ybIQ4J"]
   // ... paste the rest of your songs here, one line each
 ];
 /* ========================================= */
@@ -252,7 +322,7 @@ function show(q) {
 pager.addEventListener('click', e => {
   const b = e.target.closest('button[data-p]'); if (!b || b.disabled) return;
   page = +b.dataset.p; render();
-  document.getElementById('music').scrollIntoView({ behavior: 'smooth' });
+  // document.getElementById('music').scrollIntoView({ behavior: 'smooth' });
 });
 document.getElementById('search').addEventListener('input', e => show(e.target.value));
 show('');
